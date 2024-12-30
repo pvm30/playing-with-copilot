@@ -16,8 +16,9 @@ jobs:
     - name: Copy files to dist
       run: mkdir -p dist && cp index.html styles.css script.js dist/
 
+    # I don't like too much this because it is different from what I'm seeing in the video but ...
     - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./dist
