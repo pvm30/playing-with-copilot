@@ -85,7 +85,7 @@ function render(grid) {
             const numNeighbors = countNeighbors(grid, col, row);
             ctx.beginPath();
             ctx.rect(col * resolution, row * resolution, resolution, resolution);
-            ctx.fillStyle = cell ? `hsl(${120 - numNeighbors * 10}, 100%, ${50 - numNeighbors * 5}%)` : '#FFE4E1';
+            ctx.fillStyle = cell ? `hsl(${120 - numNeighbors * 10}, 100%, ${50 - numNeighbors * 5}%)` : '#F1F7C0';
             ctx.fill();
             ctx.stroke();
         }
