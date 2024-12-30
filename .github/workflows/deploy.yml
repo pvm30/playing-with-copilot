@@ -13,19 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build the project
-      run: npm run build
+    - name: Copy files to dist
+      run: mkdir -p dist && cp index.html styles.css script.js dist/
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: actions/deploy-pages@v4
       with:
         github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./dist
